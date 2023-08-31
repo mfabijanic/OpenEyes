@@ -122,15 +122,11 @@ function initMap() {
                         </tr>
                         <tr>
                             <td class="title">Country</td>
-                            <td class="info">${country}</td>
+                            <td class="info">${country} (${country_code})</td>
                         </tr>
                         <tr>
                             <td class="title">Coordinates</td>
                             <td class="info"><a target="_blank" href="https://www.google.com/maps/place/${lat},${lng}">${lat}, ${lng}</a></td>
-                        </tr>
-                        <tr>
-                            <td class="title">Country code</td>
-                            <td class="info">${country_code}</td>
                         </tr>
                         <tr>
                             <td class="title">Region</td>
@@ -166,9 +162,9 @@ function initMap() {
         $("#loader").hide();
         $("#map").show();
     });
+    
     addLocationButton(map);
-
-    addButtonUpdate(map);
+    addButtonOptions(map);
 
     google.maps.event.addListener(map, 'click', function () {
         infowindow.close();
@@ -176,19 +172,76 @@ function initMap() {
 }// InitMap
 
 
-function addButtonUpdate(map) {
-    let controlDiv = document.createElement('div');
-    controlDiv.classList.add("btnUpdate");
+function addButtonOptions(map) {
+    //start process to set up custom drop down
+    //create the options that respond to click
+    var divOptions1 = {
+        gmap: map,
+        name: '<i class="fa-solid fa-video"></i> Insecam',
+        title: "This acts like a button or click event",
+        id: "mapOpt",
+        action: function() {
+            window.location.replace("/");
+        }
+    }
+    var optionDiv1 = new optionDiv(divOptions1);
+    
+    var divOptions2 = {
+        gmap: map,
+        name: '<i class="fa-solid fa-video"></i> WhatsupCams',
+        title: "This acts like a button or click event",
+        id: "satelliteOpt",
+        action: function(){
+            window.location.replace("/whatsupcams");
+        }
+    }
+    var optionDiv2 = new optionDiv(divOptions2);
 
-    let firstChild = document.createElement('a');
-    firstChild.innerHTML = 'Update <i class="fa-solid fa-video"></i>';
-    controlDiv.appendChild(firstChild);
+    //possibly add a separator between controls        
+    var sep1 = new separator();
 
-    firstChild.addEventListener('click', function () {
-        $("#map").hide();
-        $("#download-loader").show();
-        window.location.replace("/scrape_cams");
-    });
+    var divOptions3 = {
+        gmap: map,
+        name: '<i class="fa-solid fa-home"></i> Home',
+        title: "This acts like a button or click event",
+        id: "satelliteOpt",
+        action: function(){
+            map.panTo(new google.maps.LatLng(35.543, 0));
+        }
+    }
+    var optionDiv3 = new optionDiv(divOptions3);
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(controlDiv);
+    //possibly add a separator between controls        
+    var sep2 = new separator();
+
+    var divOptions4 = {
+        gmap: map,
+        name: '<i class="fa-solid fa-toolbox"></i> Admin',
+        title: "This acts like a button or click event",
+        id: "satelliteOpt",
+        action: function(){
+            window.location.replace("/admin");
+        }
+    }
+    var optionDiv4 = new optionDiv(divOptions4);
+    
+    
+    //put them all together to create the drop down       
+    var ddDivOptions = {
+        items: [optionDiv1, optionDiv2, sep1, optionDiv3, sep2, optionDiv4],
+        id: "myddOptsDiv"        		
+    }
+    //alert(ddDivOptions.items[1]);
+    var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);               
+            
+    var dropDownOptions = {
+            gmap: map,
+            name: '<i class="fa-solid fa-bars"></i> Cams',
+            id: 'ddControl',
+            title: 'A custom drop down select with mixed elements',
+            position: google.maps.ControlPosition.TOP_RIGHT,
+            dropDown: dropDownDiv 
+    }
+    
+    var dropDown1 = new dropDownControl(dropDownOptions);  
 }
