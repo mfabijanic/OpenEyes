@@ -1,0 +1,17 @@
+{
+    "name": "hr_pula04",
+    "hls": {
+        "base_url": "https://cdn-004.whatsupcams.com/hls",
+        "playlist": "hr_pula04.m3u8",
+        "url": "https://cdn-004.whatsupcams.com/hls/hr_pula04.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-004.whatsupcams.com/live",
+        "uri": "rtmp://cdn-004.whatsupcams.com/live/hr_pula04"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_pula04",
+    "affiliate_links": {
+        "Booking": "https://www.booking.com/city/hr/pula.en.html?aid=1271543&no_rooms=1&group_adults=2&label=pula",
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-pula-arena-forum-and-the-tample-of-augustus/"
+    }
+}

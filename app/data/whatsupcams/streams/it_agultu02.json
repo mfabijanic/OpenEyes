@@ -1,0 +1,17 @@
+{
+    "name": "it_agultu02",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "it_agultu02.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/it_agultu02.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/it_agultu02"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/it_agultu02",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/isola-rossa-time-lapse-beach-live-view-of-sardegna/",
+        "Booking": "https://www.booking.com/city/it/trinita-d-agultu.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=agultu"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "si_velikaplanina02",
+    "hls": {
+        "base_url": "https://cdn-002.whatsupcams.com/hls",
+        "playlist": "si_velikaplanina02.m3u8",
+        "url": "https://cdn-002.whatsupcams.com/hls/si_velikaplanina02.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-002.whatsupcams.com/live",
+        "uri": "rtmp://cdn-002.whatsupcams.com/live/si_velikaplanina02"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_velikaplanina02",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/time-laps-velika-planina-livecam-slovenia/"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "hr_buildfsb02",
+    "hls": {
+        "base_url": "https://cdn-007.whatsupcams.com/hls",
+        "playlist": "hr_buildfsb02.m3u8",
+        "url": "https://cdn-007.whatsupcams.com/hls/hr_buildfsb02.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-007.whatsupcams.com/live",
+        "uri": "rtmp://cdn-007.whatsupcams.com/live/hr_buildfsb02"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_buildfsb02",
+    "affiliate_links": {}
+}

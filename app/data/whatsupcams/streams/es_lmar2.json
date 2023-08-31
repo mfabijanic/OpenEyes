@@ -1,0 +1,17 @@
+{
+    "name": "es_lmar2",
+    "hls": {
+        "base_url": "https://cdn-002.whatsupcams.com/hls",
+        "playlist": "es_lmar2.m3u8",
+        "url": "https://cdn-002.whatsupcams.com/hls/es_lmar2.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-002.whatsupcams.com/live",
+        "uri": "rtmp://cdn-002.whatsupcams.com/live/es_lmar2"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/es_lmar2",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-lloret-de-mar-webcam-dr-doner-costa-brava-spain/",
+        "Booking": "https://www.booking.com/city/es/lloret-de-mar.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=lloret_de_mar"
+    }
+}

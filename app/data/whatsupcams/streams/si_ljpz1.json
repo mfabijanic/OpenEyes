@@ -1,0 +1,16 @@
+{
+    "name": "si_ljpz1",
+    "hls": {
+        "base_url": "https://cdn-004.whatsupcams.com/hls",
+        "playlist": "si_ljpz1.m3u8",
+        "url": "https://cdn-004.whatsupcams.com/hls/si_ljpz1.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-004.whatsupcams.com/live",
+        "uri": "rtmp://cdn-004.whatsupcams.com/live/si_ljpz1"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_ljpz1",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/time-lapse-portoroz-webcam-airport-ljpz/"
+    }
+}

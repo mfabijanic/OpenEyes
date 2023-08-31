@@ -1,0 +1,16 @@
+{
+    "name": "hr_rab03",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "hr_rab03.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/hr_rab03.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/hr_rab03"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_rab03",
+    "affiliate_links": {
+        "Booking": "\thttps://www.booking.com/city/hr/rab.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=rab_mesto"
+    }
+}

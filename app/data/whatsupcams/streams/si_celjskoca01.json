@@ -1,0 +1,17 @@
+{
+    "name": "si_celjskoca01",
+    "hls": {
+        "base_url": "https://cdn-003.whatsupcams.com/hls",
+        "playlist": "si_celjskoca01.m3u8",
+        "url": "https://cdn-003.whatsupcams.com/hls/si_celjskoca01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-003.whatsupcams.com/live",
+        "uri": "rtmp://cdn-003.whatsupcams.com/live/si_celjskoca01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_celjskoca01",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/celjska-koca-timelaps-view-from-hotel-celje-slovenia/",
+        "Booking": "\thttps://www.booking.com/hotel/si/celjska-koca.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=celjskakoca"
+    }
+}

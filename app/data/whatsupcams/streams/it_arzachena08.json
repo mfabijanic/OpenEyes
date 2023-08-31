@@ -1,0 +1,16 @@
+{
+    "name": "it_arzachena08",
+    "hls": {
+        "base_url": "https://cdn-007.whatsupcams.com/hls",
+        "playlist": "it_arzachena08.m3u8",
+        "url": "https://cdn-007.whatsupcams.com/hls/it_arzachena08.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-007.whatsupcams.com/live",
+        "uri": "rtmp://cdn-007.whatsupcams.com/live/it_arzachena08"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/it_arzachena08",
+    "affiliate_links": {
+        "Timelaps": "https://www.whatsupcams.com/fr/timelapse/time-lapse-mannena-beach-webcam-arzachena-sardinia/"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "hr_rekajadranskitrg",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "hr_rekajadranskitrg.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/hr_rekajadranskitrg.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/hr_rekajadranskitrg"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_rekajadranskitrg",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/time-laps-rijeka-jadran-square-croatia/",
+        "Booking": "https://www.booking.com/city/hr/rijeka.en.html?group_adults=2&auth_success=1&aid=1271543&label=rijeka&no_rooms=1"
+    }
+}

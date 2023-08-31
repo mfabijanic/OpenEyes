@@ -1,0 +1,14 @@
+{
+    "name": "hr_zagreb5",
+    "hls": {
+        "base_url": "https://cdn-001.whatsupcams.com/hls",
+        "playlist": "hr_zagreb5.m3u8",
+        "url": "https://cdn-001.whatsupcams.com/hls/hr_zagreb5.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-001.whatsupcams.com/live",
+        "uri": "rtmp://cdn-001.whatsupcams.com/live/hr_zagreb5"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_zagreb5",
+    "affiliate_links": {}
+}

@@ -1,0 +1,16 @@
+{
+    "name": "hr_viganj1",
+    "hls": {
+        "base_url": "https://cdn-002.whatsupcams.com/hls",
+        "playlist": "hr_viganj1.m3u8",
+        "url": "https://cdn-002.whatsupcams.com/hls/hr_viganj1.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-002.whatsupcams.com/live",
+        "uri": "rtmp://cdn-002.whatsupcams.com/live/hr_viganj1"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_viganj1",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/time-laps-viganj-windsurf-beach-dalmatia-croatia/"
+    }
+}

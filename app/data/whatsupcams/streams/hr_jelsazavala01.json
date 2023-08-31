@@ -1,0 +1,17 @@
+{
+    "name": "hr_jelsazavala01",
+    "hls": {
+        "base_url": "https://cdn-004.whatsupcams.com/hls",
+        "playlist": "hr_jelsazavala01.m3u8",
+        "url": "https://cdn-004.whatsupcams.com/hls/hr_jelsazavala01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-004.whatsupcams.com/live",
+        "uri": "rtmp://cdn-004.whatsupcams.com/live/hr_jelsazavala01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_jelsazavala01",
+    "affiliate_links": {
+        "Booking": "https://www.booking.com/city/hr/jelsa.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=jelsa",
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-zavala-webcam-jelsa-hvar-croatia/"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "hr_japetic03",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "hr_japetic03.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/hr_japetic03.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/hr_japetic03"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_japetic03",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-perivoj-erdody-castle-grounds-webcam-jastrebarsko/",
+        "Booking": "\thttps://www.booking.com/searchresults.en.html?city=-83446&aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=jastrebarsko"
+    }
+}

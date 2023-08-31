@@ -1,0 +1,17 @@
+{
+    "name": "es_tenerife01",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "es_tenerife01.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/es_tenerife01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/es_tenerife01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/es_tenerife01",
+    "affiliate_links": {
+        "TimeLaps": "https://webadmin.whatsupcams.com/en/timelapse/time-laps-playa-de-las-galgas-playa-paraiso-costa-adeje-tenerife/",
+        "Booking": "http://airbnb.com/h/frontbeachapt"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "hr_planjka",
+    "hls": {
+        "base_url": "https://cdn-002.whatsupcams.com/hls",
+        "playlist": "hr_planjka.m3u8",
+        "url": "https://cdn-002.whatsupcams.com/hls/hr_planjka.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-002.whatsupcams.com/live",
+        "uri": "rtmp://cdn-002.whatsupcams.com/live/hr_planjka"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_planjka",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-planjka-beach-novalja-pag-island-croatia/"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "hr_otok01",
+    "hls": {
+        "base_url": "https://cdn-006.whatsupcams.com/hls",
+        "playlist": "hr_otok01.m3u8",
+        "url": "https://cdn-006.whatsupcams.com/hls/hr_otok01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-006.whatsupcams.com/live",
+        "uri": "rtmp://cdn-006.whatsupcams.com/live/hr_otok01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_otok01",
+    "affiliate_links": {}
+}

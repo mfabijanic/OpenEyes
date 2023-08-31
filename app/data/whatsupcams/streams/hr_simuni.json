@@ -1,0 +1,16 @@
+{
+    "name": "hr_simuni",
+    "hls": {
+        "base_url": "https://cdn-003.whatsupcams.com/hls",
+        "playlist": "hr_simuni.m3u8",
+        "url": "https://cdn-003.whatsupcams.com/hls/hr_simuni.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-003.whatsupcams.com/live",
+        "uri": "rtmp://cdn-003.whatsupcams.com/live/hr_simuni"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_simuni",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-camping-simuni-webcam-pag-croatia/"
+    }
+}

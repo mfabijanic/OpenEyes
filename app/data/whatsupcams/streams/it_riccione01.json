@@ -1,0 +1,17 @@
+{
+    "name": "it_riccione01",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "it_riccione01.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/it_riccione01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/it_riccione01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/it_riccione01",
+    "affiliate_links": {
+        "Booking": "https://www.booking.com/searchresults.en.html?city=-126306&aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=riccione",
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-webcam-riccione-beach-bagni-oreste/"
+    }
+}

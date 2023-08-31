@@ -1,0 +1,17 @@
+{
+    "name": "hr_baskavoda3",
+    "hls": {
+        "base_url": "https://cdn-001.whatsupcams.com/hls",
+        "playlist": "hr_baskavoda3.m3u8",
+        "url": "https://cdn-001.whatsupcams.com/hls/hr_baskavoda3.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-001.whatsupcams.com/live",
+        "uri": "rtmp://cdn-001.whatsupcams.com/live/hr_baskavoda3"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_baskavoda3",
+    "affiliate_links": {
+        "Booking": "https://www.booking.com/city/hr/baska-voda.en.html?aid=1271543&no_rooms=1&group_adults=2&label=baska_voda",
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-seaside-promenade-in-baska-voda-dalmatia-croatia/"
+    }
+}

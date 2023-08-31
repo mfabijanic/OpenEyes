@@ -1,0 +1,16 @@
+{
+    "name": "si_portoroz04",
+    "hls": {
+        "base_url": "https://cdn-003.whatsupcams.com/hls",
+        "playlist": "si_portoroz04.m3u8",
+        "url": "https://cdn-003.whatsupcams.com/hls/si_portoroz04.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-003.whatsupcams.com/live",
+        "uri": "rtmp://cdn-003.whatsupcams.com/live/si_portoroz04"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_portoroz04",
+    "affiliate_links": {
+        "Booking": "https://www.booking.com/city/si/portoroz.en.html?aid=1271543&no_rooms=1&group_adults=2&label=portoroz"
+    }
+}

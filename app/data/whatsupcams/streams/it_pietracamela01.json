@@ -1,0 +1,16 @@
+{
+    "name": "it_pietracamela01",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "it_pietracamela01.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/it_pietracamela01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/it_pietracamela01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/it_pietracamela01",
+    "affiliate_links": {
+        "Booking": "https://www.booking.com/city/it/pietracamela.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=pietracamela"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "hr_banjole",
+    "hls": {
+        "base_url": "https://cdn-006.whatsupcams.com/hls",
+        "playlist": "hr_banjole.m3u8",
+        "url": "https://cdn-006.whatsupcams.com/hls/hr_banjole.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-006.whatsupcams.com/live",
+        "uri": "rtmp://cdn-006.whatsupcams.com/live/hr_banjole"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_banjole",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-gulf-of-banjole-webcam-near-pula-croatia/",
+        "Booking": "https://www.booking.com/city/hr/banjole.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=banjole"
+    }
+}

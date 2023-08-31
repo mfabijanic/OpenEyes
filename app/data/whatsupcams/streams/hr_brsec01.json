@@ -1,0 +1,17 @@
+{
+    "name": "hr_brsec01",
+    "hls": {
+        "base_url": "https://cdn-002.whatsupcams.com/hls",
+        "playlist": "hr_brsec01.m3u8",
+        "url": "https://cdn-002.whatsupcams.com/hls/hr_brsec01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-002.whatsupcams.com/live",
+        "uri": "rtmp://cdn-002.whatsupcams.com/live/hr_brsec01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_brsec01",
+    "affiliate_links": {
+        "Time Laps": "https://www.whatsupcams.com/en/timelapse/time-lapse-brsec-beach-moscenicka-draga/",
+        "Booking": "https://www.booking.com/city/hr/moscenicka-draga.en.html?label=moscenicka_draga&group_adults=2&auth_success=1&no_rooms=1&room1=A%2CA&aid=1271543"
+    }
+}

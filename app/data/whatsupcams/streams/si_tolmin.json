@@ -1,0 +1,16 @@
+{
+    "name": "si_tolmin",
+    "hls": {
+        "base_url": "https://cdn-001.whatsupcams.com/hls",
+        "playlist": "si_tolmin.m3u8",
+        "url": "https://cdn-001.whatsupcams.com/hls/si_tolmin.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-001.whatsupcams.com/live",
+        "uri": "rtmp://cdn-001.whatsupcams.com/live/si_tolmin"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_tolmin",
+    "affiliate_links": {
+        "Booking": "\thttps://www.booking.com/city/si/tolmin.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=tolmin"
+    }
+}

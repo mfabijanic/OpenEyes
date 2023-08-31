@@ -1,0 +1,14 @@
+{
+    "name": "hr_tribunj01",
+    "hls": {
+        "base_url": "https://cdn-003.whatsupcams.com/hls",
+        "playlist": "hr_tribunj01.m3u8",
+        "url": "https://cdn-003.whatsupcams.com/hls/hr_tribunj01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-003.whatsupcams.com/live",
+        "uri": "rtmp://cdn-003.whatsupcams.com/live/hr_tribunj01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_tribunj01",
+    "affiliate_links": {}
+}

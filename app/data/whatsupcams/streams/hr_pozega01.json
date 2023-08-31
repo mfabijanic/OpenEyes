@@ -1,0 +1,14 @@
+{
+    "name": "hr_pozega01",
+    "hls": {
+        "base_url": "https://cdn-002.whatsupcams.com/hls",
+        "playlist": "hr_pozega01.m3u8",
+        "url": "https://cdn-002.whatsupcams.com/hls/hr_pozega01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-002.whatsupcams.com/live",
+        "uri": "rtmp://cdn-002.whatsupcams.com/live/hr_pozega01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_pozega01",
+    "affiliate_links": {}
+}

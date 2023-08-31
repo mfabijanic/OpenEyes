@@ -1,0 +1,17 @@
+{
+    "name": "si_kobarid04",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "si_kobarid04.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/si_kobarid04.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/si_kobarid04"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_kobarid04",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/hr/timelapse/krn-time-lapse-planina-kuhinja-kobarid-slovenia/",
+        "Booking": "https://www.booking.com/city/si/kobarid.en.html?label=kobarid&group_adults=2&auth_success=1&no_rooms=1&room1=A%2CA&aid=1271543"
+    }
+}

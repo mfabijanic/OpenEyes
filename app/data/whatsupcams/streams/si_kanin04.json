@@ -1,0 +1,16 @@
+{
+    "name": "si_kanin04",
+    "hls": {
+        "base_url": "https://cdn-007.whatsupcams.com/hls",
+        "playlist": "si_kanin04.m3u8",
+        "url": "https://cdn-007.whatsupcams.com/hls/si_kanin04.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-007.whatsupcams.com/live",
+        "uri": "rtmp://cdn-007.whatsupcams.com/live/si_kanin04"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_kanin04",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/time-laps-kanin-webcam-prevala-bovec-slovenia/"
+    }
+}

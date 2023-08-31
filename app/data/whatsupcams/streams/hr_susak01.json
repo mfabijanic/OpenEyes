@@ -1,0 +1,14 @@
+{
+    "name": "hr_susak01",
+    "hls": {
+        "base_url": "https://cdn-007.whatsupcams.com/hls",
+        "playlist": "hr_susak01.m3u8",
+        "url": "https://cdn-007.whatsupcams.com/hls/hr_susak01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-007.whatsupcams.com/live",
+        "uri": "rtmp://cdn-007.whatsupcams.com/live/hr_susak01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_susak01",
+    "affiliate_links": {}
+}

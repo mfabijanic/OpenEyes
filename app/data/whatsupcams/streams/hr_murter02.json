@@ -1,0 +1,14 @@
+{
+    "name": "hr_murter02",
+    "hls": {
+        "base_url": "https://cdn-003.whatsupcams.com/hls",
+        "playlist": "hr_murter02.m3u8",
+        "url": "https://cdn-003.whatsupcams.com/hls/hr_murter02.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-003.whatsupcams.com/live",
+        "uri": "rtmp://cdn-003.whatsupcams.com/live/hr_murter02"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_murter02",
+    "affiliate_links": {}
+}

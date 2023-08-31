@@ -1,0 +1,17 @@
+{
+    "name": "si_mbpohorje02",
+    "hls": {
+        "base_url": "https://cdn-002.whatsupcams.com/hls",
+        "playlist": "si_mbpohorje02.m3u8",
+        "url": "https://cdn-002.whatsupcams.com/hls/si_mbpohorje02.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-002.whatsupcams.com/live",
+        "uri": "rtmp://cdn-002.whatsupcams.com/live/si_mbpohorje02"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_mbpohorje02",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/time-laps-webcam-maribor-pohorje-arena-livecam/",
+        "Booking": "https://www.booking.com/searchresults.en.html?city=-88556&aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=maribor"
+    }
+}

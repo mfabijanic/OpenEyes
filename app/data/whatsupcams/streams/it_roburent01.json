@@ -1,0 +1,14 @@
+{
+    "name": "it_roburent01",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "it_roburent01.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/it_roburent01.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/it_roburent01"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/it_roburent01",
+    "affiliate_links": {}
+}

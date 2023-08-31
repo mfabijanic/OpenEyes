@@ -1,0 +1,16 @@
+{
+    "name": "si_bukovnik",
+    "hls": {
+        "base_url": "https://cdn-006.whatsupcams.com/hls",
+        "playlist": "si_bukovnik.m3u8",
+        "url": "https://cdn-006.whatsupcams.com/hls/si_bukovnik.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-006.whatsupcams.com/live",
+        "uri": "rtmp://cdn-006.whatsupcams.com/live/si_bukovnik"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/si_bukovnik",
+    "affiliate_links": {
+        "TimeLaps": "https://www.whatsupcams.com/en/timelapse/timelaps-live-webcam-ski-center-bukovnik-slovenia/"
+    }
+}
