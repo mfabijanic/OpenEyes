@@ -1,4 +1,4 @@
-FROM python:3.9.13-alpine3.16 as basic
+FROM python:3.10.11-alpine3.16 as basic
 
 FROM basic as builder
 
@@ -10,7 +10,7 @@ RUN pip install --upgrade pip --user --no-warn-script-location --disable-pip-ver
 RUN pip install --force-reinstall --prefix=/install -r requirements.txt --no-warn-script-location
 
 
-FROM python:3.9.13-alpine3.16
+FROM python:3.10.11-alpine3.16
 
 COPY --from=builder /install /usr/local
 
