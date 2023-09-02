@@ -196,38 +196,43 @@ function initMap() {
                     infowindow.setContent(content);
                     infowindow.open(map, marker);
 
-                    // videojs player - via the constructor
-                    var player = videojs('video-' + uuid, {
-                        fluid: true,
-                        controlBar: {
-                            fullscreenToggle: false,
-                            pictureInPictureToggle: false,
-                            playToggle: false
-                        },
-                        html5: {
-                            vhs: {
-                                overrideNative: true
+                    google.maps.event.addListener(infowindow, 'domready', function () {
+                        // videojs player - via the constructor
+                        var player = videojs('video-' + uuid, {
+                            fluid: true,
+                            controlBar: {
+                                fullscreenToggle: false,
+                                pictureInPictureToggle: false,
+                                playToggle: false
                             },
-                            nativeAudioTracks: false,
-                            nativeVideoTracks: false
-                        },
-                        userActions: {
-                            // Click on video - Fullscreen
-                            click: videoFullscreenClickHandler,
-                            hotkeys: function(event) {
-                                // `F` key = Fullscreen
-                                if (event.which === 70) {
-                                    if (this.isFullscreen()) {
-                                        this.exitFullscreen();
-                                    } else {
-                                        this.requestFullscreen();
+                            html5: {
+                                vhs: {
+                                    overrideNative: true
+                                },
+                                nativeAudioTracks: false,
+                                nativeVideoTracks: false
+                            },
+                            userActions: {
+                                // Click on video - Fullscreen
+                                click: videoFullscreenClickHandler,
+                                hotkeys: function(event) {
+                                    // `F` key = Fullscreen
+                                    if (event.which === 70) {
+                                        if (this.isFullscreen()) {
+                                            this.exitFullscreen();
+                                        } else {
+                                            this.requestFullscreen();
+                                        }
                                     }
                                 }
                             }
-                        }
+                        });
+                        
+                        player.play();
+                        
+                        // Set focus on video
+                        $("#video-" + uuid).focus();
                     });
-
-                    player.play();                    
 
                 }
             })(marker));
@@ -251,11 +256,6 @@ function initMap() {
 
         infowindow.close();
     });
-
-    google.maps.event.addListener(infowindow, 'domready', function () {
-        // Set focus on video
-        $("#video-" + uuid).focus();
-    });    
 
 }// InitMap
 
