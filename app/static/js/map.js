@@ -1,8 +1,11 @@
+var uuid;
+
+
 $(document).ready(function () {
     window.initMap = initMap;
-
     $("#download-loader").hide();
 });
+
 
 // Normalize overlapping markers
 function correctPosition(lat, lng) {
@@ -57,10 +60,73 @@ function addLocationButton(map) {
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlDiv);
 }
 
+function CreateUUID() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
+}
+
+function requestFullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullscreen) { /* Mozilla */
+        element.mozRequestFullscreen();
+    } else if (element.webkitRequestFullscreen) { /* Safari */
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { /* IE11 */
+        element.msRequestFullscreen();
+    }
+}
+
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullscreen) { /* Mozilla */
+        document.mozCancelFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+    }
+}
+
+function toggleFullscreen(element) {
+    if (document.fullscreenElement === null) {
+        requestFullscreen(element);
+    } else {
+        exitFullscreen();
+    }
+}
+
+function videoFullscreenClickHandler(event) {
+    // `this` is the player in this context
+    if (this.isFullscreen()) {
+        this.exitFullscreen || this.mozCancelFullScreen || this.webkitExitFullscreen || this.msExitFullscreen
+    } else {
+        this.requestFullscreen || this.mozRequestFullScreen || this.webkitRequestFullscreen || this.msRequestFullscreen
+    }
+};
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+}
+
 function initMap() {
     $("#map").hide();
 
-    // Init map
+    // Init map - default zoom: 5
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 5,
         center: new google.maps.LatLng(45.543, 25.910),
@@ -70,9 +136,30 @@ function initMap() {
     });
 
     var infowindow = new google.maps.InfoWindow();
-
     var markers = []
-    $.getJSON("/get_cams", function (locations) {
+
+    const map_site_insecam = 'insecam';
+    const map_site_wuc = 'wuc';
+    var map_site = '';
+    var video_type = '';
+
+    map_site = getCookie('site');
+
+    var get_cams = '';
+
+
+    switch(map_site) {
+        case 'insecam':
+            get_cams = '/get_cams';
+            video_type = 'mjpeg';
+            break;
+        case 'wuc':
+            get_cams = '/whatsupcams/cams';
+            video_type = 'hls';
+            break;
+    }
+
+    $.getJSON(get_cams, function (locations) {
         for (let i = 0; i < locations.length; i++) {
             const data = locations[i];
 
@@ -80,6 +167,7 @@ function initMap() {
             const lng = data['lng'];
             const city = data['city'];
             const stream = data['stream'];
+            const stream2 = data['stream2'];
             // let id = data['id'];
             const country = data['country'];
             const country_code = data['country_code'];
@@ -100,6 +188,7 @@ function initMap() {
             }
 
             // Create marker
+            // default: url: stream
             let marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
@@ -109,24 +198,68 @@ function initMap() {
             // Marker click listener
             google.maps.event.addListener(marker, "click", (function (marker) {
                 return function () {
+                    if (video_type == 'hls') {
+                        // remove the html associated with videojs player
+                        if(document.getElementById('video-' + uuid)) {
+                            var oldPlayer = document.getElementById('video-' + uuid);
+                            videojs(oldPlayer).dispose();
+                        }
+                    }
+
+                    uuid = CreateUUID();
+
+                    const video_hls = `
+                        <video id="video-${uuid}" width=100% height=100% class="video-js vjs-default-skin" controls autoplay>
+                            <source src="${stream}" type="application/x-mpegURL">
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                        </video>
+                    `;
+
+                    const video_mjpeg = `
+                        <div align="center" style="background-color:#000000">
+                            <img id="video-${uuid}" class="canfullscreen" src="${stream}" width='480' height='270'/>
+                        </div>
+                    `;
+
+                    var video = '';
+
+                    switch(video_type) {
+                        case 'hls':
+                            video = video_hls;
+                            break;
+                        case 'mjpeg':
+                            video = video_mjpeg;
+                            break;
+                    }
+                    
+                    stream2_url = ''
+                    if (stream2 != undefined) {
+                        stream2_url = '<a target="_blank" href="' + stream2 + '">' + stream2 + '</a>'
+                    }
+
                     const content = `
                     <table>
                         <tr>
-                            <a target="_blank" href="${stream}">
-                                <img src="${stream}" height='100%' width='100%'/>
-                            </a>
+                            ` + video + `
                         </tr>
                         <tr>
                             <td class="title">Stream</td>
                             <td class="info"><a target="_blank" href="${stream}">${stream}</a></td>
                         </tr>
-                        <tr>
-                            <td class="title">Country</td>
-                            <td class="info">${country} (${country_code})</td>
+                        <tr class="tr-stream2">
+                            <td class="title">Stream</td>
+                            <td class="info">` + stream2_url + `</td>
                         </tr>
                         <tr>
                             <td class="title">Coordinates</td>
                             <td class="info"><a target="_blank" href="https://www.google.com/maps/place/${lat},${lng}">${lat}, ${lng}</a></td>
+                        </tr>
+                        <tr>
+                            <td class="title">Country</td>
+                            <td class="info">${country} (${country_code})</td>
                         </tr>
                         <tr>
                             <td class="title">Region</td>
@@ -144,7 +277,7 @@ function initMap() {
                             <td class="title">Timezone</td>
                             <td class="info">${timezone}</td>
                         </tr>
-                        <tr>
+                        <tr class="manufacturer">
                             <td class="title">Manufacturer</td>
                             <td class="info"><a target="_blank" href="https://www.google.com/search?q=${manufacturer}">${manufacturer}</a></td>
                         </tr>
@@ -152,8 +285,62 @@ function initMap() {
                     `;
 
                     infowindow.setContent(content);
-
                     infowindow.open(map, marker);
+
+                    google.maps.event.addListener(infowindow, 'domready', function () {
+                        if (video_type == 'mjpeg') {
+                            document.addEventListener('click', function(e){
+                                var target = e.target
+                                if (target.tagName == "IMG" && target.classList.contains('canfullscreen')) {
+                                    image = this.getElementById('video-' + uuid);
+                                    // Full screen
+                                    toggleFullscreen(image);
+                                }
+                            }, false)
+                        }
+
+                        if (video_type == 'hls') {
+                            // videojs player - via the constructor
+                            var player = videojs('video-' + uuid, {
+                                fluid: true,
+                                controlBar: {
+                                    fullscreenToggle: true,
+                                    pictureInPictureToggle: false,
+                                    playToggle: false
+                                },
+                                html5: {
+                                    vhs: {
+                                        overrideNative: true
+                                    },
+                                    nativeAudioTracks: false,
+                                    nativeVideoTracks: false
+                                },
+                                userActions: {
+                                    // Click on video - Fullscreen
+                                    click: videoFullscreenClickHandler,
+                                    hotkeys: function(event) {
+                                        // `F` key = Fullscreen
+                                        if (event.which === 70) {
+                                            /*
+                                            if (this.isFullscreen()) {
+                                                this.exitFullscreen();
+                                            } else {
+                                                this.requestFullscreen();
+                                            }
+                                            */
+                                            toggleFullscreen(this);
+                                        }
+                                    }
+                                }
+                            });
+                            
+                            player.play();
+                        }
+                        
+                        // Set focus on video
+                        $("#video-" + uuid).focus();
+                    });
+
                 }
             })(marker));
 
@@ -162,15 +349,23 @@ function initMap() {
         $("#loader").hide();
         $("#map").show();
     });
-    
+
+    google.maps.event.addListener(map, 'click', function () {
+        if (video_type == 'hls') {
+            // remove the html associated with videojs player
+            if(document.getElementById('video-' + uuid)) {
+                var oldPlayer = document.getElementById('video-' + uuid);
+                videojs(oldPlayer).dispose();
+            }
+        }
+
+        infowindow.close();
+    });
+
     addLocationButton(map);
     addButtonOptions(map);
 
-    google.maps.event.addListener(map, 'click', function () {
-        infowindow.close();
-    });
 }// InitMap
-
 
 function addButtonOptions(map) {
     //start process to set up custom drop down
@@ -206,7 +401,7 @@ function addButtonOptions(map) {
         title: "This acts like a button or click event",
         id: "satelliteOpt",
         action: function(){
-            map.panTo(new google.maps.LatLng(35.543, 0));
+            map.panTo(new google.maps.LatLng(45.543, 25.910));
         }
     }
     var optionDiv3 = new optionDiv(divOptions3);
@@ -224,15 +419,14 @@ function addButtonOptions(map) {
         }
     }
     var optionDiv4 = new optionDiv(divOptions4);
-    
-    
+
+
     //put them all together to create the drop down       
     var ddDivOptions = {
         items: [optionDiv1, optionDiv2, sep1, optionDiv3, sep2, optionDiv4],
         id: "myddOptsDiv"        		
     }
-    //alert(ddDivOptions.items[1]);
-    var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);               
+    var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);
             
     var dropDownOptions = {
             gmap: map,

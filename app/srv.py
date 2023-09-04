@@ -7,7 +7,7 @@ from time import sleep
 
 import logging
 from flask_compress import Compress
-from flask import Flask, render_template, redirect, url_for, send_from_directory, jsonify
+from flask import Flask, make_response, render_template, redirect, url_for, send_from_directory, jsonify
 from logging.config import fileConfig
 
 if not path.exists('log'):
@@ -49,7 +49,9 @@ def map_page():
     Return:
         index page: Map page
     """
-    return render_template('index.html')
+    response = make_response(render_template('index.html'))
+    response.set_cookie('site', 'insecam')
+    return response
 
 
 @app.route('/get_cams', methods=['GET'])
@@ -109,7 +111,9 @@ def map_wuc_page():
     Return
         render template: /whatsupcams
     """
-    return render_template('map-whatsupcams.html')
+    response = make_response(render_template('index.html'))
+    response.set_cookie('site', 'wuc')
+    return response
 
 
 @app.route('/whatsupcams/cams', methods=['GET'])
