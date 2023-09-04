@@ -234,7 +234,7 @@ function initMap() {
                             video = video_mjpeg;
                             break;
                     }
-                    
+
                     stream2_url = ''
                     if (stream2 != undefined) {
                         stream2_url = '<a target="_blank" href="' + stream2 + '">' + stream2 + '</a>'
@@ -368,6 +368,17 @@ function initMap() {
 }// InitMap
 
 function addButtonOptions(map) {
+    //map_site = getCookie('site');
+
+    switch(getCookie('site')) {
+        case 'insecam':
+            site = 'Insecam';
+            break;
+        case 'wuc':
+            site = 'Whatsupcams';
+            break;
+    }
+
     //start process to set up custom drop down
     //create the options that respond to click
     var divOptions1 = {
@@ -430,7 +441,7 @@ function addButtonOptions(map) {
             
     var dropDownOptions = {
             gmap: map,
-            name: '<i class="fa-solid fa-bars"></i> Cams',
+            name: '<i class="fa-solid fa-bars"></i> Cams> ' + site,
             id: 'ddControl',
             title: 'A custom drop down select with mixed elements',
             position: google.maps.ControlPosition.TOP_RIGHT,
