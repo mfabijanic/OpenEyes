@@ -218,9 +218,10 @@ function initMap() {
                         </video>
                     `;
 
+                    // tabindex="-1" - now can focus img element
                     const video_mjpeg = `
                         <div align="center" style="background-color:#000000">
-                            <img id="video-${uuid}" class="canfullscreen" src="${stream}" width='480' height='270'/>
+                            <img id="video-${uuid}" src="${stream}" width="80%" height="80%" tabindex="-1"/>
                         </div>
                     `;
 
@@ -283,23 +284,36 @@ function initMap() {
                         </tr>
                     </table>
                     `;
-
+                    
                     infowindow.setContent(content);
                     infowindow.open(map, marker);
 
                     google.maps.event.addListener(infowindow, 'domready', function () {
                         if (video_type == 'mjpeg') {
-                            document.addEventListener('click', function(e){
-                                var target = e.target
-                                if (target.tagName == "IMG" && target.classList.contains('canfullscreen')) {
-                                    image = this.getElementById('video-' + uuid);
+                            document.addEventListener(
+                                "click",
+                                (event) => {
+                                var target = event.target
+                                if (target.id == "video-" + uuid) {
                                     // Full screen
-                                    toggleFullscreen(image);
+                                    toggleFullscreen(target);
                                 }
-                            }, false)
-                        }
-
-                        if (video_type == 'hls') {
+                                }, false
+                            );
+                            document.addEventListener(
+                                "keypress",
+                                (event) => {
+                                    var target = event.target
+                                    if (target.id == "video-" + uuid) {
+                                        // Full screen
+                                        if (event.code == 'KeyF') {
+                                            toggleFullscreen(target);
+                                        }
+                                    }
+                                },
+                                true,
+                            );
+                        } else if (video_type == 'hls') {
                             // videojs player - via the constructor
                             var player = videojs('video-' + uuid, {
                                 fluid: true,
@@ -320,20 +334,12 @@ function initMap() {
                                     click: videoFullscreenClickHandler,
                                     hotkeys: function(event) {
                                         // `F` key = Fullscreen
-                                        if (event.which === 70) {
-                                            /*
-                                            if (this.isFullscreen()) {
-                                                this.exitFullscreen();
-                                            } else {
-                                                this.requestFullscreen();
-                                            }
-                                            */
+                                        if (event.code === 'KeyF') {
                                             toggleFullscreen(this);
                                         }
                                     }
                                 }
                             });
-                            
                             player.play();
                         }
                         
@@ -358,7 +364,6 @@ function initMap() {
                 videojs(oldPlayer).dispose();
             }
         }
-
         infowindow.close();
     });
 
@@ -430,7 +435,6 @@ function addButtonOptions(map) {
         }
     }
     var optionDiv4 = new optionDiv(divOptions4);
-
 
     //put them all together to create the drop down       
     var ddDivOptions = {
