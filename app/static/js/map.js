@@ -141,7 +141,12 @@ function notifyMe(msg) {
     // Let's check if the user is okay to get some notification
     else if (Notification.permission === "granted") {
         // If it's okay let's create a notification
-        var notification = new Notification(msg);
+        var notification = new Notification('ReconEyes',
+        {
+            icon: '/static/img/cam.png',
+            body: msg
+        }
+        );
     }
     // Otherwise, we need to ask the user for permission
     // Note, Chrome does not implement the permission static property
@@ -154,7 +159,12 @@ function notifyMe(msg) {
             }
             // If the user is okay, let's create a notification
             if (permission === "granted") {
-                var notification = new Notification(msg);
+                var notification = new Notification('ReconEyes',
+                    {
+                        icon: '/static/img/cam.png',
+                        body: msg
+                    }
+                    );
             }
         });
     } else {
