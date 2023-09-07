@@ -1,0 +1,17 @@
+{
+    "name": "hr_zadar4",
+    "hls": {
+        "base_url": "https://cdn-004.whatsupcams.com/hls",
+        "playlist": "hr_zadar4.m3u8",
+        "url": "https://cdn-004.whatsupcams.com/hls/hr_zadar4.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-004.whatsupcams.com/live",
+        "uri": "rtmp://cdn-004.whatsupcams.com/live/hr_zadar4"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_zadar4",
+    "affiliate_links": {
+        "Bookging": "https://www.booking.com/city/hr/zadar.en.html?aid=1271543&no_rooms=1&group_adults=2&room1=A%2CA&label=zadar",
+        "TimeLaps": "https://webadmin.whatsupcams.com/en/timelapse/time-lapse-zadar-livecam-narodni-trg-peoples-square/"
+    }
+}

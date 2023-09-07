@@ -1,0 +1,14 @@
+{
+    "name": "it_bibione14",
+    "hls": {
+        "base_url": "https://cdn-007.whatsupcams.com/hls",
+        "playlist": "it_bibione14.m3u8",
+        "url": "https://cdn-007.whatsupcams.com/hls/it_bibione14.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-007.whatsupcams.com/live",
+        "uri": "rtmp://cdn-007.whatsupcams.com/live/it_bibione14"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/it_bibione14",
+    "affiliate_links": {}
+}

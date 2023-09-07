@@ -1,0 +1,17 @@
+{
+    "name": "hr_nov8",
+    "hls": {
+        "base_url": "https://cdn-003.whatsupcams.com/hls",
+        "playlist": "hr_nov8.m3u8",
+        "url": "https://cdn-003.whatsupcams.com/hls/hr_nov8.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-003.whatsupcams.com/live",
+        "uri": "rtmp://cdn-003.whatsupcams.com/live/hr_nov8"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/hr_nov8",
+    "affiliate_links": {
+        "Booking": "https://www.booking.com/city/hr/novalja.en.html?aid=1271543&no_rooms=1&group_adults=2&label=novalja",
+        "TimeLapas": "https://www.whatsupcams.com/en/timelapse/time-laps-novalja-webcam-seaside-promenade-pag-croatia/"
+    }
+}
