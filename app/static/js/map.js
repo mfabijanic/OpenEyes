@@ -123,6 +123,45 @@ function getCookie(cname) {
     return "";
 }
 
+// request permission on page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (!Notification) {
+        alert('Desktop notifications not available in your browser.');
+        return;
+    }
+    if (Notification.permission !== 'granted')
+        Notification.requestPermission();
+});
+
+function notifyMe(msg) {
+    // Let's check if the browser supports notifications
+    if (!("Notification" in window)) {
+        alert("This browser does not support desktop notification");
+    }
+    // Let's check if the user is okay to get some notification
+    else if (Notification.permission === "granted") {
+        // If it's okay let's create a notification
+        var notification = new Notification(msg);
+    }
+    // Otherwise, we need to ask the user for permission
+    // Note, Chrome does not implement the permission static property
+    // So we have to check for NOT 'denied' instead of 'default'
+    else if (Notification.permission !== 'denied') {
+        Notification.requestPermission(function (permission) {
+            // Whatever the user answers, we make sure we store the information
+            if(!('permission' in Notification)) {
+                Notification.permission = permission;
+            }
+            // If the user is okay, let's create a notification
+            if (permission === "granted") {
+                var notification = new Notification(msg);
+            }
+        });
+    } else {
+        alert(`Permission is ${Notification.permission}`);
+    }
+}
+
 function initMap() {
     $("#map").hide();
 
@@ -416,8 +455,36 @@ function addButtonOptions(map) {
         name: '<i class="fa-solid fa-home"></i> Home',
         title: "This acts like a button or click event",
         id: "satelliteOpt",
-        action: function(){
-            map.panTo(new google.maps.LatLng(45.543, 25.910));
+        action: function () {
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0,
+            };
+            const success = (position) => {
+                console.log(position)
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                console.log(lat + ", " + lng)
+                map.panTo(new google.maps.LatLng(lat, lng));
+            };
+            const error = () => {
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                      notifyMe("User denied the request for Geolocation.");
+                      break;
+                    case error.POSITION_UNAVAILABLE:
+                      notifyMe("Location information is unavailable.");
+                      break;
+                    case error.TIMEOUT:
+                      notifyMe("The request to get user location timed out.");
+                      break;
+                    case error.UNKNOWN_ERROR:
+                      notifyMe("An unknown error occurred.");
+                      break;
+                  }
+            };
+            navigator.geolocation.getCurrentPosition(success, error, options);
         }
     }
     var optionDiv3 = new optionDiv(divOptions3);
