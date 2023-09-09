@@ -1,0 +1,14 @@
+{
+    "name": "it_livigno04",
+    "hls": {
+        "base_url": "https://cdn-005.whatsupcams.com/hls",
+        "playlist": "it_livigno04.m3u8",
+        "url": "https://cdn-005.whatsupcams.com/hls/it_livigno04.m3u8"
+    },
+    "rtmp": {
+        "base_uri": "rtmp://cdn-005.whatsupcams.com/live",
+        "uri": "rtmp://cdn-005.whatsupcams.com/live/it_livigno04"
+    },
+    "snapshot": "https://cdn.whatsupcams.com/snapshot/it_livigno04",
+    "affiliate_links": {}
+}
