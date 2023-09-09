@@ -405,6 +405,40 @@ function initMap() {
         $("#map").show();
     });
 
+
+
+    google.maps.event.addListener(map, 'bounds_changed', function () {
+        // Set My location after map is loaded
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0,
+        };
+        const success = (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            map.panTo(new google.maps.LatLng(lat, lng));
+        };
+        const error = () => {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                  notifyMe("User denied the request for Geolocation.");
+                  break;
+                case error.POSITION_UNAVAILABLE:
+                  notifyMe("Location information is unavailable.");
+                  break;
+                case error.TIMEOUT:
+                  notifyMe("The request to get user location timed out.");
+                  break;
+                case error.UNKNOWN_ERROR:
+                  notifyMe("An unknown error occurred.");
+                  break;
+              }
+        };
+        navigator.geolocation.getCurrentPosition(success, error, options);
+    });
+
+
     google.maps.event.addListener(map, 'click', function () {
         if (video_type == 'hls') {
             // remove the html associated with videojs player
@@ -472,10 +506,8 @@ function addButtonOptions(map) {
                 maximumAge: 0,
             };
             const success = (position) => {
-                console.log(position)
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
-                console.log(lat + ", " + lng)
                 map.panTo(new google.maps.LatLng(lat, lng));
             };
             const error = () => {
