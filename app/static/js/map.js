@@ -403,11 +403,7 @@ function initMap() {
         }
         $("#loader").hide();
         $("#map").show();
-    });
 
-
-
-    google.maps.event.addListener(map, 'bounds_changed', function () {
         // Set My location after map is loaded
         const options = {
             enableHighAccuracy: true,
@@ -420,22 +416,9 @@ function initMap() {
             map.panTo(new google.maps.LatLng(lat, lng));
         };
         const error = () => {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                  notifyMe("User denied the request for Geolocation.");
-                  break;
-                case error.POSITION_UNAVAILABLE:
-                  notifyMe("Location information is unavailable.");
-                  break;
-                case error.TIMEOUT:
-                  notifyMe("The request to get user location timed out.");
-                  break;
-                case error.UNKNOWN_ERROR:
-                  notifyMe("An unknown error occurred.");
-                  break;
-              }
         };
         navigator.geolocation.getCurrentPosition(success, error, options);
+
     });
 
 
